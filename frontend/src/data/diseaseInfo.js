@@ -12,7 +12,7 @@ const diseaseInfo = {
       "Milia umumnya tidak berbahaya dan bukan penyakit menular.",
   },
 
-  Eksim: {
+  eksim: {
     title: "Eksim",
     badge: "Kulit kering & gatal",
     cause:
@@ -25,17 +25,17 @@ const diseaseInfo = {
       "Eksim tidak selalu berbahaya tetapi bila tidak ditangani dapat menyebabkan infeksi akibat garukan.",
   },
 
-  rosacea: {
-    title: "Rosacea",
-    badge: "Kemerahan wajah",
+  whitehead: {
+    title: "Whitehead",
+    badge: "Komedo putih",
     cause:
-      "Rosacea menyebabkan kemerahan pada wajah akibat pembuluh darah melebar. Pemicunya bisa panas, sinar matahari, stres, makanan pedas, atau alkohol.",
+      "Whitehead terjadi karena pori-pori tersumbat oleh minyak berlebih, sel kulit mati, dan kotoran yang tertutup di bawah permukaan kulit.",
     symptom:
-      "Wajah kemerahan, terasa panas, muncul pembuluh darah halus, kadang muncul jerawat kecil.",
+      "Muncul benjolan kecil berwarna putih atau sewarna kulit, biasanya di area wajah seperti hidung, dagu, dan dahi.",
     treatment:
-      "Gunakan sunscreen, hindari pemicu, gunakan skincare lembut, dan konsultasikan ke dokter kulit.",
+      "Bersihkan wajah secara rutin, gunakan skincare non-komedogenik, hindari memencet komedo, dan konsultasikan ke dokter kulit bila semakin parah.",
     danger:
-      "Rosacea bukan penyakit berbahaya tetapi dapat semakin parah bila tidak dirawat.",
+      "Whitehead umumnya tidak berbahaya, tetapi dapat berkembang menjadi jerawat apabila tidak dirawat dengan baik.",
   },
 };
 

@@ -1,59 +1,23 @@
 import { useState } from "react";
-
 import Header from "./components/Header";
 import UploadCard from "./components/UploadCard";
 import ResultCard from "./components/ResultCard";
-import ChatBox from "./components/ChatBox";
-
-import diseaseInfo from "./data/diseaseInfo";
 
 function App() {
+  const [result, setResult] = useState(null);
 
-    const [result,setResult] = useState(null);
+  return (
+    <div className="h-screen bg-gradient-to-br from-emerald-50 via-slate-50 to-teal-50 px-5 py-4 overflow-hidden">
+      <div className="max-w-6xl mx-auto h-full flex flex-col">
+        <Header />
 
-    const info = result
-        ? diseaseInfo[result.prediction]
-        : null;
-
-    return (
-
-        <main className="min-h-screen bg-slate-100">
-
-            <div className="max-w-7xl mx-auto p-8">
-
-                <Header/>
-
-                <div className="grid lg:grid-cols-2 gap-8 mt-8">
-
-                    <div>
-
-                        <UploadCard
-                            setResult={setResult}
-                        />
-
-                        <ResultCard
-                            result={result}
-                        />
-
-                    </div>
-
-                    <div>
-
-                        <ChatBox
-                            result={result}
-                            info={info}
-                        />
-
-                    </div>
-
-                </div>
-
-            </div>
-
+        <main className="grid grid-cols-1 lg:grid-cols-2 gap-5 mt-4 flex-1 min-h-0">
+          <UploadCard setResult={setResult} />
+          <ResultCard result={result} />
         </main>
-
-    );
-
+      </div>
+    </div>
+  );
 }
 
 export default App;
