@@ -39,7 +39,7 @@ function UploadCard({ setResult }) {
       setError("");
 
       const response = await axios.post(
-        "http://127.0.0.1:5000/predict",
+        "https://pendeteksi-penyakit-kulit1.vercel.app/predict",
         form,
         {
           headers: {
@@ -51,7 +51,12 @@ function UploadCard({ setResult }) {
       setResult(response.data);
     } catch (err) {
       console.log(err);
-      setError("Backend Flask belum berjalan atau terjadi error saat prediksi.");
+
+      if (err.response?.data?.error) {
+        setError(err.response.data.error);
+      } else {
+        setError("Terjadi error saat menghubungi backend.");
+      }
     } finally {
       setLoading(false);
     }
@@ -61,6 +66,7 @@ function UploadCard({ setResult }) {
     <div className="bg-white/90 backdrop-blur rounded-3xl p-5 shadow-xl h-full min-h-0 flex flex-col">
       <div className="shrink-0">
         <h2 className="text-2xl font-bold text-gray-800">Upload Gambar</h2>
+
         <p className="text-gray-500 text-sm mt-1">
           Upload foto kulit dengan format JPG, JPEG, atau PNG.
         </p>
@@ -78,8 +84,14 @@ function UploadCard({ setResult }) {
         ) : (
           <div className="text-center text-gray-500">
             <div className="text-6xl">📷</div>
-            <p className="mt-3 font-semibold">Klik untuk upload gambar</p>
-            <p className="text-sm mt-1">PNG / JPG / JPEG</p>
+
+            <p className="mt-3 font-semibold">
+              Klik untuk upload gambar
+            </p>
+
+            <p className="text-sm mt-1">
+              PNG / JPG / JPEG
+            </p>
           </div>
         )}
 
